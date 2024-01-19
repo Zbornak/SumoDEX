@@ -29,25 +29,13 @@ struct Rikishi: Comparable, Identifiable {
     }
 }
 
-struct Result: Codable {
-    let query: Query
-}
-
-struct Query: Codable {
-    let page: Page
-}
-
-struct Page: Codable {
-    let pageid: Int
-    let title: String
-}
-
 struct ContentView: View {
     enum LoadingState {
         case loading, loaded, failed
     }
     
-    var loadingState = LoadingState.loading
+    @State private var loadingState = LoadingState.loading
+    @State private var pages = [Page]()
     
     let testRikishi = [
         Rikishi(name: "Hoshoryu", kanji: "豊昇龍", birthName: "Sugarragchaagiin Byambasuren", nationality: "Mongolian", hometown: "Ulaanbaatar", age: 24, height: 1.87, weight: 140, currentRank: "Ozeki", highestRank: "Ozeki", stable: "Tatsunami", championshipsWon: 2, specialPrizes: ["Technique", "Fighting Spirit"], notes: ""),
@@ -60,7 +48,10 @@ struct ContentView: View {
                 Section("Active Rikishi") {
                     switch loadingState {
                     case .loaded:
-                        Text("Loaded")
+                        ForEach(pages, id: \.pageid) { page in
+                            Text(page.title)
+                                    .font(.headline)
+                                }
                     case .loading:
                         Text("Loading…")
                     case .failed:
@@ -76,8 +67,20 @@ struct ContentView: View {
     }
     
     func fetchActiveRikishi() async {
-        let urlString = "https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&explaintext=true&exintro&titles=List+of+active+sumo+wrestlers"
-        print(urlString)
+        let urlString = "https://en.wikipedia.org/w/api.php?action=query&titles=List_of_active_sumo_wrestlers&prop=revisions&rvprop=content&format=json"
+        guard let url = URL(string: urlString) else {
+                print("Bad URL: \(urlString)")
+                return
+            }
+
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let items = try JSONDecoder().decode(Result.self, from: data)
+                pages = items.query.pages.values.sorted { $0.title < $1.title }
+                loadingState = .loaded
+            } catch {
+                loadingState = .failed
+            }
     }
 }
 

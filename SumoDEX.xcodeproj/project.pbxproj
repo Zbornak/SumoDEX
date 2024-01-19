@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBCCCDB02B5A936A007A37AC /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCCDAF2B5A936A007A37AC /* Result.swift */; };
 		DBD6CB522B57DA1F0000153C /* SumoDEXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6CB512B57DA1F0000153C /* SumoDEXApp.swift */; };
 		DBD6CB542B57DA1F0000153C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6CB532B57DA1F0000153C /* ContentView.swift */; };
 		DBD6CB562B57DA200000153C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD6CB552B57DA200000153C /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DBCCCDAF2B5A936A007A37AC /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		DBD6CB4E2B57DA1F0000153C /* SumoDEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SumoDEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD6CB512B57DA1F0000153C /* SumoDEXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumoDEXApp.swift; sourceTree = "<group>"; };
 		DBD6CB532B57DA1F0000153C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				DBD6CB512B57DA1F0000153C /* SumoDEXApp.swift */,
 				DBD6CB532B57DA1F0000153C /* ContentView.swift */,
+				DBCCCDAF2B5A936A007A37AC /* Result.swift */,
 				DBD6CB552B57DA200000153C /* Assets.xcassets */,
 				DBD6CB572B57DA200000153C /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCCCDB02B5A936A007A37AC /* Result.swift in Sources */,
 				DBD6CB542B57DA1F0000153C /* ContentView.swift in Sources */,
 				DBD6CB522B57DA1F0000153C /* SumoDEXApp.swift in Sources */,
 			);
