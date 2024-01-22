@@ -57,7 +57,12 @@ struct ContentView: View {
     }
     
     func filterArrayForNames(from arrayToFilter: [String]) -> [String] {
-        let newArray = [String]()
+        var newArray = [String]()
+        for i in 0...arrayToFilter.count {
+            if i.isMultiple(of: 7) {
+                newArray.append(arrayToFilter[i])
+            }
+        }
         
         return newArray
     }
