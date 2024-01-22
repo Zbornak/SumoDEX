@@ -59,7 +59,7 @@ struct ContentView: View {
                 let contents = try String(contentsOf: url)
                 let document: Document = try SwiftSoup.parse(contents)
                 guard let body = document.body() else { return }
-                let tables = try body.getElementsByClass("sortable wikitable")
+                let tables = try body.getElementsByTag("td")
                 for table in tables {
                     try print(table.text())
                 }
