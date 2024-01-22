@@ -54,6 +54,8 @@ struct ContentView: View {
     }
     
     func fetchActiveRikishiData() async {
+        var nameArray = [""]
+        
         if let url = URL(string: "https://en.wikipedia.org/wiki/List_of_active_sumo_wrestlers") {
             do {
                 let contents = try String(contentsOf: url)
@@ -61,7 +63,7 @@ struct ContentView: View {
                 guard let body = document.body() else { return }
                 let tables = try body.getElementsByTag("td")
                 for table in tables {
-                    try print(table.text())
+                    try nameArray.append(table.text())
                 }
             } catch {
                 print("Error: Contents could not be loaded.")
@@ -69,6 +71,8 @@ struct ContentView: View {
         } else {
             print("Error: Bad URL.")
         }
+        
+        print(nameArray)
     }
 }
 
