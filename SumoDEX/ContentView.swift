@@ -54,7 +54,7 @@ struct ContentView: View {
     }
     
     func fetchActiveRikishiData() async {
-        var rikishiInfoArray = [""]
+        var rikishiInfoArray = [String]()
         
         if let url = URL(string: "https://en.wikipedia.org/wiki/List_of_active_sumo_wrestlers") {
             do {
