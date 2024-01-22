@@ -37,6 +37,8 @@ struct ContentView: View {
         Rikishi(name: "Endo", kanji: "遠藤聖大", birthName: "Shota Endo", nationality: "Japanese", hometown: "Anamizu", age: 33, height: 1.83, weight: 148, currentRank: "Maegashira", highestRank: "Komusubi", stable: "Oitekaze", championshipsWon: 1, specialPrizes: ["Fighting Spirit", "Technique", "Outstanding Performance"], notes: "")
     ].sorted()
     
+    @State private var rikishiInfoArray = [String]()
+    
     var body: some View {
         NavigationStack {
             Form {
@@ -48,31 +50,29 @@ struct ContentView: View {
             }
             .navigationTitle("相撲デックス")
             .task {
-                await fetchActiveRikishiData()
+                await rikishiInfoArray = fetchActiveRikishiData()
             }
         }
     }
     
-    func fetchActiveRikishiData() async {
-        var rikishiInfoArray = [String]()
-        
+    func fetchActiveRikishiData() async -> [String] {
         if let url = URL(string: "https://en.wikipedia.org/wiki/List_of_active_sumo_wrestlers") {
             do {
                 let contents = try String(contentsOf: url)
                 let document: Document = try SwiftSoup.parse(contents)
-                guard let body = document.body() else { return }
+                guard let body = document.body() else { return ["Error: Body could not be loaded."] }
                 let table = try body.getElementsByTag("td")
                 for tableEntry in table {
                     try rikishiInfoArray.append(tableEntry.text())
                 }
             } catch {
-                print("Error: Contents could not be loaded.")
+                return ["Error: Contents could not be loaded."]
             }
         } else {
-            print("Error: Bad URL.")
+            return ["Error: Bad URL."]
         }
         
-        print(rikishiInfoArray)
+        return rikishiInfoArray
     }
 }
 
