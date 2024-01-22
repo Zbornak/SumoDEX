@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBCCCDB32B5AC34D007A37AC /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = DBCCCDB22B5AC34D007A37AC /* SwiftSoup */; };
 		DBD6CB522B57DA1F0000153C /* SumoDEXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6CB512B57DA1F0000153C /* SumoDEXApp.swift */; };
 		DBD6CB542B57DA1F0000153C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6CB532B57DA1F0000153C /* ContentView.swift */; };
 		DBD6CB562B57DA200000153C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD6CB552B57DA200000153C /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCCCDB32B5AC34D007A37AC /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = SumoDEX;
+			packageProductDependencies = (
+				DBCCCDB22B5AC34D007A37AC /* SwiftSoup */,
+			);
 			productName = SumoDEX;
 			productReference = DBD6CB4E2B57DA1F0000153C /* SumoDEX.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = DBD6CB452B57DA1F0000153C;
+			packageReferences = (
+				DBCCCDB12B5AC34D007A37AC /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = DBD6CB4F2B57DA1F0000153C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +352,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DBCCCDB12B5AC34D007A37AC /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DBCCCDB22B5AC34D007A37AC /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DBCCCDB12B5AC34D007A37AC /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DBD6CB462B57DA1F0000153C /* Project object */;
 }

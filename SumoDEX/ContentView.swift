@@ -5,6 +5,7 @@
 //  Created by Mark Strijdom on 17/01/2024.
 //
 
+import SwiftSoup
 import SwiftUI
 
 struct Rikishi: Comparable, Identifiable {
@@ -41,13 +42,28 @@ struct ContentView: View {
             Form {
                 Section("Active Rikishi") {
                     List {
-                        ForEach(testRikishi, id: \.id) { rikishi in
-                            Text(rikishi.name)
-                        }
+                        Text("hello")
                     }
                 }
             }
             .navigationTitle("相撲デックス")
+            .task {
+                await fetchActiveRikishiData()
+            }
+        }
+    }
+    
+    func fetchActiveRikishiData() async {
+        if let url = URL(string: "https://en.wikipedia.org/wiki/List_of_active_sumo_wrestlers") {
+            do {
+                let contents = try String(contentsOf: url)
+                let document: Document = try SwiftSoup.parse(contents)
+                try print(document.title())
+            } catch {
+                print("Error: Contents could not be loaded.")
+            }
+        } else {
+            print("Error: Bad URL.")
         }
     }
 }
