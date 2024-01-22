@@ -58,7 +58,11 @@ struct ContentView: View {
             do {
                 let contents = try String(contentsOf: url)
                 let document: Document = try SwiftSoup.parse(contents)
-                try print(document.title())
+                guard let body = document.body() else { return }
+                let tables = try body.getElementsByClass("sortable wikitable")
+                for table in tables {
+                    try print(table.text())
+                }
             } catch {
                 print("Error: Contents could not be loaded.")
             }
