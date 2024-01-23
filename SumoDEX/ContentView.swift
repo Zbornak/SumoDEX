@@ -21,10 +21,18 @@ struct ContentView: View {
     @State private var searchText = ""
     @State private var rikishiInfoArray = [String]()
     
+    var searchResults: [String] {
+            if searchText.isEmpty {
+                return filterArrayForNames(from: rikishiInfoArray)
+            } else {
+                return filterArrayForNames(from: rikishiInfoArray).filter { $0.contains(searchText) }
+            }
+        }
+    
     var body: some View {
         NavigationStack {
             List {
-                ForEach(rikishiInfoArray, id: \.self) { rikishi in
+                ForEach(searchResults, id: \.self) { rikishi in
                     Text(rikishi)
                 }
             }
