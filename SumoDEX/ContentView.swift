@@ -11,6 +11,9 @@ import SwiftUI
 struct Rikishi: Comparable, Identifiable {
     let id = UUID()
     var name: String
+    var heya: String
+    var information: String
+    var isFavourite: Bool
     
     static func <(lhs: Rikishi, rhs: Rikishi) -> Bool {
         lhs.name < rhs.name
@@ -40,8 +43,9 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("相撲デックス")
+            .navigationTitle("❀相撲デックス")
             .searchable(text: $searchText)
+            .listStyle(.grouped)
             .task {
                 await rikishiInfoArray = fetchActiveRikishiData()
             }
@@ -74,8 +78,12 @@ struct ContentView: View {
             let newArray = arrayToFilter.filter { $0.contains(kanji) }
             return newArray
         } catch {
-            return ["Error: REGEX filtering failed"]
+            return ["Error: Filtering failed."]
         }
+    }
+    
+    func getRikishiInfo(for rikishiName: String) -> Rikishi {
+        return Rikishi(name: "Abi Masatora", heya: "Shikoroyama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
     }
 }
 
