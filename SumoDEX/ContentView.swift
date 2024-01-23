@@ -43,7 +43,7 @@ struct ContentView: View {
             List {
                 ForEach(searchResults, id: \.self) { rikishi in
                     NavigationLink {
-                        RikishiDetailView()
+                        RikishiDetailView(rikishi: getRikishiInfo(for: rikishi))
                     } label: {
                         Text(rikishi)
                     }
@@ -89,7 +89,14 @@ struct ContentView: View {
     }
     
     func getRikishiInfo(for rikishiName: String) -> Rikishi {
-        return Rikishi(name: "Abi Masatora", currentRank: "West Maegashira #2", debut: "2013-5", heya: "Shikoroyama", birthdate: "May 4, 1994 (age 29)", hometown:"Saitama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
+        var rikishi = Rikishi(name: "", currentRank: "", debut: "", heya: "", birthdate: "", hometown: "", information: "", isFavourite: false)
+        for arrayItem in rikishiInfoArray {
+            if arrayItem.contains(rikishiName) {
+                rikishi.name = arrayItem
+            }
+        }
+        
+        return rikishi
     }
 }
 

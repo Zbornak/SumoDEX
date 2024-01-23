@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct RikishiDetailView: View {
+    let rikishi: Rikishi
     var body: some View {
-        Text("Rikishi detail")
+        Text(rikishi.name)
     }
 }
 
 #Preview {
-    RikishiDetailView()
+    RikishiDetailView(rikishi: Rikishi.example)
 }
