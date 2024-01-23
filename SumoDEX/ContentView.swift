@@ -92,7 +92,14 @@ struct ContentView: View {
         var rikishi = Rikishi(name: "", currentRank: "", debut: "", heya: "", birthdate: "", hometown: "", information: "", isFavourite: false)
         for arrayItem in rikishiInfoArray {
             if arrayItem.contains(rikishiName) {
+                var arrayIterator = rikishiInfoArray.makeIterator()
                 rikishi.name = arrayItem
+                rikishi.currentRank = arrayIterator.next() ?? "Unknown rank"
+                rikishi.debut = arrayIterator.next() ?? "Unknown debut date"
+                rikishi.heya = arrayIterator.next() ?? "Unknown heya"
+                rikishi.birthdate = arrayIterator.next() ?? "Unknown birthdate"
+                rikishi.hometown = arrayIterator.next() ?? "Unknown hometown"
+                rikishi.information = arrayIterator.next() ?? "Rikishi information not found"
             }
         }
         

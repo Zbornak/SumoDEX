@@ -10,7 +10,20 @@ import SwiftUI
 struct RikishiDetailView: View {
     let rikishi: Rikishi
     var body: some View {
-        Text(rikishi.name)
+        NavigationStack {
+            VStack {
+                Image(systemName: "figure.wrestling")
+                    .font(.largeTitle)
+                Text(rikishi.currentRank)
+                Text(rikishi.debut)
+                Text(rikishi.heya)
+                Text(rikishi.birthdate)
+                Text(rikishi.hometown)
+                Text(rikishi.information)
+                    .padding()
+            }
+            .navigationTitle(rikishi.name)
+        }
     }
 }
 
