@@ -61,7 +61,7 @@ struct ContentView: View {
             return ["Error: Bad URL."]
         }
         
-        return filterArrayForNames(from: rikishiInfoArray)
+        return rikishiInfoArray
     }
     
     func filterArrayForNames(from arrayToFilter: [String]) -> [String] {
