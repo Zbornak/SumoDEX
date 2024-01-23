@@ -12,14 +12,11 @@ struct RikishiDetailView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ZStack {
-                    Image(systemName: "oval").font(.system(size: 86)).offset(x: 0, y: 8)
-                    HStack {
-                        Image(systemName: "figure.wrestling")
-                            .font(.largeTitle)
-                        Image(systemName: "figure.wrestling").scaleEffect(CGSize(width: -1.0, height: 1.0))
-                            .font(.largeTitle)
-                    }
+                HStack {
+                    Image(systemName: "figure.wrestling").font(.largeTitle)
+                    Image(systemName: "figure.wrestling")
+                        .scaleEffect(CGSize(width: -1.0, height: 1.0))
+                        .font(.largeTitle)
                 }
                 .padding()
                 
