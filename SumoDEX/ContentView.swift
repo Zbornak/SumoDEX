@@ -91,8 +91,10 @@ struct ContentView: View {
     func getRikishiInfo(for rikishiName: String) -> Rikishi {
         var rikishi = Rikishi(name: "", currentRank: "", debut: "", heya: "", birthdate: "", hometown: "", information: "", isFavourite: false)
         if let index = rikishiInfoArray.firstIndex(where: { $0 == rikishiName }) {
-            rikishi.name = rikishiInfoArray[index]
-            //rikishi.currentRank = rikishiInfoArray[index + 1]
+            if index > 0 {
+                rikishi.name = rikishiInfoArray[index]
+                rikishi.currentRank = rikishiInfoArray[index + 1]
+            }
         }
         
         return rikishi
