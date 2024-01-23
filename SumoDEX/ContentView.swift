@@ -11,11 +11,15 @@ import SwiftUI
 struct Rikishi: Comparable, Identifiable {
     let id = UUID()
     var name: String
+    var currentRank: String
+    var debut: String
     var heya: String
+    var birthdate: String
+    var hometown: String
     var information: String
     var isFavourite: Bool
     
-    static var example = Rikishi(name: "Abi Masatora", heya: "Shikoroyama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
+    static var example = Rikishi(name: "Abi Masatora", currentRank: "West Maegashira #2", debut: "2013-5", heya: "Shikoroyama", birthdate: "May 4, 1994 (age 29)", hometown:"Saitama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
     
     static func <(lhs: Rikishi, rhs: Rikishi) -> Bool {
         lhs.name < rhs.name
@@ -85,7 +89,7 @@ struct ContentView: View {
     }
     
     func getRikishiInfo(for rikishiName: String) -> Rikishi {
-        return Rikishi(name: "Abi Masatora", heya: "Shikoroyama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
+        return Rikishi(name: "Abi Masatora", currentRank: "West Maegashira #2", debut: "2013-5", heya: "Shikoroyama", birthdate: "May 4, 1994 (age 29)", hometown:"Saitama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
     }
 }
 
