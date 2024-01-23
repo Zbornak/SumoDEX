@@ -14,13 +14,6 @@ struct RikishiDetailView: View {
             VStack {
                 Image(systemName: "figure.wrestling")
                     .font(.largeTitle)
-                Text(rikishi.currentRank)
-                Text(rikishi.debut)
-                Text(rikishi.heya)
-                Text(rikishi.birthdate)
-                Text(rikishi.hometown)
-                Text(rikishi.information)
-                    .padding()
             }
             .navigationTitle(rikishi.name)
         }
