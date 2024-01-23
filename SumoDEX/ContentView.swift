@@ -94,6 +94,11 @@ struct ContentView: View {
             if index > 0 {
                 rikishi.name = rikishiInfoArray[index]
                 rikishi.currentRank = rikishiInfoArray[index + 1]
+                rikishi.debut = rikishiInfoArray[index + 2]
+                rikishi.heya = rikishiInfoArray[index + 3]
+                rikishi.birthdate = rikishiInfoArray[index + 4]
+                rikishi.hometown = rikishiInfoArray[index + 5]
+                rikishi.information = rikishiInfoArray[index + 6]
             }
         }
         
