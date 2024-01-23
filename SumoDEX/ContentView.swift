@@ -33,7 +33,11 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(searchResults, id: \.self) { rikishi in
-                    Text(rikishi)
+                    NavigationLink {
+                        RikishiDetailView()
+                    } label: {
+                        Text(rikishi)
+                    }
                 }
             }
             .navigationTitle("相撲デックス")
