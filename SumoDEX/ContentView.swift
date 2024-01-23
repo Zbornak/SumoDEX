@@ -53,13 +53,13 @@ struct ContentView: View {
             return ["Error: Bad URL."]
         }
         
-        return rikishiInfoArray
+        return filterArrayForNames(from: rikishiInfoArray)
     }
     
     func filterArrayForNames(from arrayToFilter: [String]) -> [String] {
         do {
-            let kanji = try Regex("/[\u{3040}-\u{30ff}\u{3400}-\u{4dbf}\u{4e00}-\u{9fff}\u{f900}-\u{faff}\u{ff66}-\u{ff9f}]/")
-            let newArray = arrayToFilter.filter { !$0.contains(kanji) }
+            let kanji = try Regex("[\u{4E00}-\u{9FFF}\u{3000}-\u{303F}]")
+            let newArray = arrayToFilter.filter { $0.contains(kanji) }
             return newArray
         } catch {
             return ["Error: REGEX filtering failed"]
