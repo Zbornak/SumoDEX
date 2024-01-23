@@ -15,6 +15,8 @@ struct Rikishi: Comparable, Identifiable {
     var information: String
     var isFavourite: Bool
     
+    static var example = Rikishi(name: "Abi Masatora", heya: "Shikoroyama", information: "one-time sekiwake, known for distinctive tsuppari, won successive lower division championships after a three tournament suspension for repeatedly breaking COVID-19 rules", isFavourite: false)
+    
     static func <(lhs: Rikishi, rhs: Rikishi) -> Bool {
         lhs.name < rhs.name
     }
