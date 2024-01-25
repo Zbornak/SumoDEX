@@ -41,6 +41,16 @@ struct RikishiDetailView: View {
                     Text(rikishi.information).multilineTextAlignment(.center)
                     
                 }
+                .toolbar {
+                    Button {
+                        // add to favourites
+                    } label: {
+                        HStack {
+                            Image(systemName: rikishi.isFavourite == false ? "arrow.down.heart" : "suit.heart.fill")
+                            Text(rikishi.isFavourite == false ? "Add to favourites" : "Favourite")
+                        }
+                    }
+                }
             }
             .padding()
             .navigationTitle(rikishi.name)
