@@ -13,6 +13,7 @@
 		DBD6CB542B57DA1F0000153C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6CB532B57DA1F0000153C /* ContentView.swift */; };
 		DBD6CB562B57DA200000153C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD6CB552B57DA200000153C /* Assets.xcassets */; };
 		DBD6CB592B57DA200000153C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBD6CB582B57DA200000153C /* Preview Assets.xcassets */; };
+		DBEB94712B67DB7800023117 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB94702B67DB7800023117 /* FavouritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DBD6CB532B57DA1F0000153C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DBD6CB552B57DA200000153C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBD6CB582B57DA200000153C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBEB94702B67DB7800023117 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				DBD6CB512B57DA1F0000153C /* SumoDEXApp.swift */,
 				DBD6CB532B57DA1F0000153C /* ContentView.swift */,
+				DBEB94702B67DB7800023117 /* FavouritesView.swift */,
 				DBC439E82B5FC20100E4A499 /* RikishiDetailView.swift */,
 				DBD6CB552B57DA200000153C /* Assets.xcassets */,
 				DBD6CB572B57DA200000153C /* Preview Content */,
@@ -150,6 +153,7 @@
 			files = (
 				DBD6CB542B57DA1F0000153C /* ContentView.swift in Sources */,
 				DBD6CB522B57DA1F0000153C /* SumoDEXApp.swift in Sources */,
+				DBEB94712B67DB7800023117 /* FavouritesView.swift in Sources */,
 				DBC439E92B5FC20100E4A499 /* RikishiDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

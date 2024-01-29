@@ -52,6 +52,8 @@ struct RikishiDetailView: View {
                             Text(rikishi.isFavourite == false ? "Add to favourites" : "Favourite")
                         }
                     }
+                    // disable button if Rikishi is already in favourites
+                    .disabled(rikishi.isFavourite)
                 }
             }
             .padding()
