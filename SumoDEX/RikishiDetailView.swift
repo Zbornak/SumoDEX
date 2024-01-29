@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RikishiDetailView: View {
     let rikishi: Rikishi
+    @State private var favourites = [Rikishi]()
+    
     var body: some View {
         NavigationStack {
             ZStack {
